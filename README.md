@@ -8,7 +8,7 @@ Features:
 - Custom Multi Prefixes
 
 **Easy to Read**
-```
+```js
 module.exports = {
   name: 'name' //command name
   description: 'description' // command description
