@@ -42,10 +42,10 @@ class DiscordClient extends Client {
                         .setDescription(description)
                         .setColor('#f25a5a')
                     ],
-                    epheremal: true,
+                    ephemeral: true,
                 });
                 break;
-            case "interaction":
+            case "message":
                 message_or_interaction.reply({
                     embeds: [
                         new EmbedBuilder()
@@ -53,7 +53,7 @@ class DiscordClient extends Client {
                         .setDescription(description)
                         .setColor('#f25a5a')
                     ],
-                });
+                }).then((msg) => setTimeout(() => msg.delete()), 10000);
                 break;
         }
     }
