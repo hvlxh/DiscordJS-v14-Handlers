@@ -1,5 +1,6 @@
 module.exports = {
     name: 'interactionCreate',
+    nick: 'Nick',
     /**
      * 
      * @param {import('discord.js').CommandInteraction} interaction 
@@ -15,6 +16,29 @@ module.exports = {
                 interaction,
                 '404 Not Found',
                 'This command is not exist in the bot files.',
+            );
+            
+            if(
+                cmd.permissions &&
+                cmd.permissions.member &&
+                cmd.permissions.member.length &&
+                !interaction.channel.permissionsFor(interaction.member).has(cmd.permissions.member)
+            ) return client.sendError(
+                'interaction',
+                interaction,
+                '403 Missing Permission',
+                `You are missing the permissions of the current command, ${cmd.permissions.member.join(', ')}`,
+            );
+            if(
+                cmd.permissions &&
+                cmd.permissions.bot &&
+                cmd.permissions.bot.length &&
+                !interaction.channel.permissionsFor(interaction.guild.me).has(cmd.permissions.bot)
+            ) return client.sendError(
+                'interaction',
+                interaction,
+                '403 Bot Missing Permission',
+                `You are missing the permissions of the current command, ${cmd.permissions.bot.join(', ')}`,
             );
 
             command.run(client, interaction);
