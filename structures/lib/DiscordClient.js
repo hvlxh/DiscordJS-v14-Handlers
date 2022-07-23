@@ -6,7 +6,14 @@ const Jsoning = require('jsoning');
 
 class DiscordClient extends Client {
     constructor() {
-        super({ intents: 32767 });
+        super({intents: [
+            GatewayIntentBits.Guilds,
+            GatewayIntentBits.GuildMembers,
+            GatewayIntentBits.GuildMessages,
+            GatewayIntentBits.GuildPresences,
+            GatewayIntentBits.MessageContent,
+            GatewayIntentBits.GuildVoiceStates
+        ]});
     
         this.slashCommands = new Collection();
         this.prefixCommands = new Collection();
