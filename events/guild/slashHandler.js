@@ -1,6 +1,6 @@
 module.exports = {
     name: 'interactionCreate',
-    nick: 'Nick',
+    nick: 'Slash',
     /**
      * 
      * @param {import('discord.js').CommandInteraction} interaction 
@@ -19,26 +19,26 @@ module.exports = {
             );
             
             if(
-                cmd.permissions &&
-                cmd.permissions.member &&
-                cmd.permissions.member.length &&
-                !interaction.channel.permissionsFor(interaction.member).has(cmd.permissions.member)
+                command.permissions &&
+                command.permissions.member &&
+                command.permissions.member.length &&
+                !interaction.channel.permissionsFor(interaction.member).has(command.permissions.member)
             ) return client.sendError(
                 'interaction',
                 interaction,
                 '403 Missing Permission',
-                `You are missing the permissions of the current command, ${cmd.permissions.member.join(', ')}`,
+                `You are missing the permissions of the current command, ${command.permissions.member.join(', ')}`,
             );
             if(
-                cmd.permissions &&
-                cmd.permissions.bot &&
-                cmd.permissions.bot.length &&
-                !interaction.channel.permissionsFor(interaction.guild.me).has(cmd.permissions.bot)
+                command.permissions &&
+                command.permissions.bot &&
+                command.permissions.bot.length &&
+                !interaction.channel.permissionsFor(interaction.guild.me).has(command.permissions.bot)
             ) return client.sendError(
                 'interaction',
                 interaction,
                 '403 Bot Missing Permission',
-                `You are missing the permissions of the current command, ${cmd.permissions.bot.join(', ')}`,
+                `You are missing the permissions of the current command, ${command.permissions.bot.join(', ')}`,
             );
 
             command.run(client, interaction);
