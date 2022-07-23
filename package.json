@@ -1,0 +1,28 @@
+{
+  "name": "discordjs-v14-handler",
+  "version": "1.0.0",
+  "description": "A setup for discordjs v14 bot.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Default27/DiscordJS-v14-Handlers.git"
+  },
+  "keywords": [
+    "discordjs"
+  ],
+  "author": "Default27",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Default27/DiscordJS-v14-Handlers/issues"
+  },
+  "homepage": "https://github.com/Default27/DiscordJS-v14-Handlers#readme",
+  "dependencies": {
+    "ascii-table": "^0.0.9",
+    "discord.js": "^14.0.3",
+    "glob": "^8.0.3",
+    "jsoning": "^0.13.23"
+  }
+}
