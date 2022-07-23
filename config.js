@@ -1,7 +1,7 @@
 module.exports = {
-    token: 'MTAwMDI5NzU4NzcyODk3MzkzNQ.G9Yp0o.rdUGb0etSDptsfBs5guISTN18V1ghcCOPcV_34',
+    token: 'Bot Token',
     default_prefix: '!',
-    owners: [''],
+    owners: ['Your ID'],
     presence: {
         activities: { 
             name: 'you',
