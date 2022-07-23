@@ -10,13 +10,13 @@ Features:
 **Easy to Read**
 ```js
 module.exports = {
-  name: 'name' //command name
-  description: 'description' // command description
-  aliases: ['aliases'] //command aliases
+  name: 'name', //command name
+  description: 'description', // command description
+  aliases: ['aliases'], //command aliases
   permissions: {
-    member: [''] // member permissions
-    bot: [''] // bot permissions
-  }
+    member: [''], // member permissions
+    bot: [''], // bot permissions
+  },
   run: (client, message, args) => {
     
   },
