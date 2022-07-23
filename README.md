@@ -22,3 +22,5 @@ module.exports = {
   },
 };
 ```
+
+Found any bugs, have any suggestion about the bot? Create a issue or pull request!
