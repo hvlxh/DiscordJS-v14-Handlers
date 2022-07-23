@@ -14,11 +14,11 @@ module.exports = {
         };
         let c_prefix;
         if(prefixes.forEach(prefix => {
-            if(message.content.startsWith(prefix))
+            if(message.content.toLowerCase().startsWith(prefix))
             c_prefix = prefix;
         }));
-        console.log(message.content);
-        const prefixMention = new RegExp(`^<@!?${client.user.id}> `);
+       
+	const prefixMention = new RegExp(`^<@!?${client.user.id}> `);
 		c_prefix = message.content.match(prefixMention)
 			? message.content.match(prefixMention)[0]
 			: c_prefix;
@@ -41,7 +41,6 @@ module.exports = {
             '403 Missing Permission',
             `You are missing the permissions of the current command, ${cmd.permissions.member.join(', ')}`,
         );
-
         if(
             cmd.permissions &&
             cmd.permissions.bot &&
