@@ -10,11 +10,8 @@
     "type": "git",
     "url": "git+https://github.com/Default27/DiscordJS-v14-Handlers.git"
   },
-  "keywords": [
-    "discordjs"
-  ],
-  "author": "Default27",
-  "license": "ISC",
+  "author": "default27",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Default27/DiscordJS-v14-Handlers/issues"
   },
