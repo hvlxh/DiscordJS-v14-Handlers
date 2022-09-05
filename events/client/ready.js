@@ -7,11 +7,13 @@ module.exports = {
     run: (client) => {
         console.log('Client is Ready!');
         client.guilds.cache.forEach(guild => {
-            let array = [];
+            guild.commands.set([]);
             client.slashCommands.forEach(cmd => {
-                array.push(cmd)                
+                guild.commands.add(cmd).then(() => console.log(`"${cmd.name}" Slash command loaded in Guild: ${guild.id}`));
+            });  
+            client.contextCommands.forEach(cmd => {
+                guild.commands.add(cmd).then(() => console.log(`"${cmd.name}" Context command loaded in Guild: ${guild.id}`));
             });
-            guild.commands.set(array).then((a) => console.log(`"${a.name}" loaded in Guild: ${guild.id}`));
         });
 
         client.user.setPresence(client.config.presence);
