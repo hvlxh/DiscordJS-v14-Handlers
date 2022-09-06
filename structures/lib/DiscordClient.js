@@ -1,7 +1,7 @@
 const { EmbedBuilder } = require('@discordjs/builders');
 const { CommandInteraction } = require('discord.js');
 const { Message } = require('discord.js');
-const { Client, Collection } = require('discord.js');
+const { Client, Collection, GatewayIntentBits } = require('discord.js');
 const Jsoning = require('jsoning');
 
 class DiscordClient extends Client {
