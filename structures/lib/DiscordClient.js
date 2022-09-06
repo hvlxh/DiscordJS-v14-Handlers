@@ -25,7 +25,7 @@ class DiscordClient extends Client {
     };
 
     start() {
-        ['events', 'slashCommands', 'prefixCommands'].forEach(handler => 
+        ['events', 'slashCommands', 'prefixCommands', 'contextCommands'].forEach(handler => 
             require(`../handlers/${handler}`)(this)
         );
         
