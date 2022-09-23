@@ -9,10 +9,10 @@ module.exports = {
         client.guilds.cache.forEach(guild => {
             guild.commands.set([]);
             client.slashCommands.forEach(cmd => {
-                guild.commands.add(cmd).then(() => console.log(`"${cmd.name}" Slash command loaded. Guild: ${guild.id}`));
+                guild.commands.create(cmd).then(() => console.log(`"${cmd.name}" Slash command loaded. Guild: ${guild.id}`));
             });  
             client.contextCommands.forEach(cmd => {
-                guild.commands.add(cmd).then(() => console.log(`"${cmd.name}" Context command loaded. Guild: ${guild.id}`));
+                guild.commands.create(cmd).then(() => console.log(`"${cmd.name}" Context command loaded. Guild: ${guild.id}`));
             });
         });
 
